@@ -2,11 +2,12 @@ package nyc.c4q;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.ListView;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 
 public class ListActivity extends Activity {
@@ -63,14 +64,49 @@ public class ListActivity extends Activity {
 
     public static void sortAlphabetically (Person [] people ){
 
-        Arrays.sort(people);
-        for(int i = 0; i < people.length; i++){
-
-            String log = "First Name: " + people[i].firstName + "Last Name: " + people[i].lastName + "House: " + people[i].house;
-
-            Log.d("APLHA ORDER PPL: ", log );
+        ArrayList <Person> listOfPeople = new ArrayList<>();
+        for(int i =0; i<people.length; i++){
+            listOfPeople.add(people[i]);
         }
+        Collections.sort(listOfPeople, new Comparator<Person>() {
+            @Override
+            public int compare(Person person, Person otherPerson) {
+                return ;
+            }
+        });
+
+
+
+
+//        for(int i = 0 ; i < people.length; i++) {
+//
+//            Person currentPerson = people[i];
+//            String currentPersonName = currentPerson.firstName;
+//
+//            for(int x = 1 ; x < people.length -1; x++){
+//
+//                Person comparedPerson = people[x];
+//                String comparedPersonName = comparedPerson.firstName;
+//
+//                if(currentPersonName.)
+//
+//            }
+//
+//        }
+//
+//
+//
+//
+//        for(int i = 0; i < people.length; i++){
+//
+//
+//            String log = "First Name: " + people[i].firstName + "Last Name: " + people[i].lastName + "House: " + people[i].house;
+//
+//            Log.d("APLHA ORDER PPL: ", log);
+//        }
 
     }
+
+
 
 }
